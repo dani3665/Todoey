@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDo-->
+        <!--Title-->
         <scene sceneID="5dI-yC-b1m">
             <objects>
                 <tableViewController id="Ue5-fU-u1a" customClass="ToDoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="Ue5-fU-u1a" id="IW3-3Z-A0J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ToDo" id="B0J-FD-j72"/>
+                    <navigationItem key="navigationItem" title="Title" id="SsB-gn-cgi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BBW-x7-Kxt">
+                            <connections>
+                                <action selector="addNewItem:" destination="Ue5-fU-u1a" id="esU-to-ds6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkt-xK-Dqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
