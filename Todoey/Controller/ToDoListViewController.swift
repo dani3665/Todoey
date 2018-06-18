@@ -12,12 +12,19 @@ class ToDoListViewController: UITableViewController {
 
     var itemArray = ["Test1", "Daniel", "Cool"]
     
+    let userDefaults = UserDefaults.standard
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //tableView.register(UINib(nibName: "ToDoTableItemCell", bundle: self.nibBundle), forCellReuseIdentifier: "test")
-
-
+        let restoredArr = userDefaults.array(forKey: "itemArray") as? [String]
+        
+        if let arr = restoredArr {
+            itemArray = arr
+        }
+        
     }
 
     
@@ -58,6 +65,7 @@ class ToDoListViewController: UITableViewController {
             if let val = newItem {
                 if !val.isEmpty {
                     self.itemArray.append(val)
+                    self.userDefaults.set(self.itemArray, forKey: "itemArray")
                     self.tableView.reloadData()
                 }
             }
